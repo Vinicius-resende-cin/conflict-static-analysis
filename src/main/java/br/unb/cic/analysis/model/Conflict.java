@@ -151,7 +151,7 @@ public class Conflict {
                                     "\t\t\t\t\t" + "\"method\": \"%s\"," + "\n" +
                                     "\t\t\t\t\t" + "\"line\": %d" + "\n" +
                                 "\t\t\t\t" + "}," + "\n" +
-                                "\t\t\t\t" + "\"stackTrace\": [\"" + sourceTraversedLine.stream().map(t -> t.toString()).collect(Collectors.joining("\", \"")) + "\"]" + "\n" +
+                                "\t\t\t\t" + "\"stackTrace\": [" + sourceTraversedLine.stream().map(TraversedLine::toJSON).collect(Collectors.joining(",")) + "]" + "\n" +
                             "\t\t\t" + "}," + "\n" +
                             "\t\t\t" + "{" + "\n" +
                                 "\t\t\t\t" + "\"type\": \"sink\"," + "\n" +
@@ -163,7 +163,7 @@ public class Conflict {
                                     "\t\t\t\t\t" + "\"method\": \"%s\"," + "\n" +
                                     "\t\t\t\t\t" + "\"line\": %d" + "\n" +
                                 "\t\t\t\t" + "}," + "\n" +
-                                "\t\t\t\t" + "\"stackTrace\": [\"" + sinkTraversedLine.stream().map(t -> t.toString()).collect(Collectors.joining("\", \"")) + "\"]" + "\n" +
+                                "\t\t\t\t" + "\"stackTrace\": [" + sinkTraversedLine.stream().map(TraversedLine::toJSON).collect(Collectors.joining(",")) + "]" + "\n" +
                             "\t\t\t" + "}" + "\n" +
                         "\t\t" + "]" + "\n" +
                     "\t" + "}" + "\n" +
