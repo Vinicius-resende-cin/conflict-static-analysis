@@ -168,9 +168,9 @@ public class Conflict {
                         "\t\t" + "]" + "\n" +
                     "\t" + "}" + "\n" +
                 "}",
-                type, label, sourceUnit, sinkUnit,
-                sourceUnit, sourceClassName, sourceMethodName, sourceLineNumber,
-                sinkUnit, sinkClassName, sinkMethodName, sinkLineNumber
+                type, label, sourceUnit.toString().replaceAll("\"", "'"), sinkUnit.toString().replaceAll("\"", "'"),
+                sourceUnit.toString().replaceAll("\"", "'"), sourceClassName, sourceMethodName, sourceLineNumber,
+                sinkUnit.toString().replaceAll("\"", "'"), sinkClassName, sinkMethodName, sinkLineNumber
         );
     }
 }
