@@ -52,7 +52,7 @@ public class OAConflict extends Conflict {
                         "\t\t" + "]" + "\n" +
                     "\t" + "}" + "\n" +
                 "}",
-                type, label, sourceUnit.toString().replaceAll("\"", "'"), sinkUnit.toString().replaceAll("\"", "'"),
+                type, label, sourceUnit.getDefBoxes().get(0).getValue(), sinkUnit.getDefBoxes().get(0).getValue(),
                 sourceUnit.toString().replaceAll("\"", "'"), sourceClassName, sourceMethodName, sourceLineNumber,
                 sinkUnit.toString().replaceAll("\"", "'"), sinkClassName, sinkMethodName, sinkLineNumber
         );
