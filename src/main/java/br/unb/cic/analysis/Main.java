@@ -658,22 +658,9 @@ public class Main {
 
         List<String> entrypointsList = new ArrayList<>();
         for (String element : elements) {
-            entrypointsList.add(extractMethodSignature(element));
+            entrypointsList.add(element);
         }
 
         return entrypointsList;
-    }
-
-    private String extractMethodSignature(String fullMethodSignature) {
-        int lastColonIndex = fullMethodSignature.lastIndexOf(':');
-        if (lastColonIndex != -1) {
-            String methodSignature = fullMethodSignature.substring(lastColonIndex + 1).trim();
-            if (methodSignature.endsWith(">")) {
-                methodSignature = methodSignature.substring(0, methodSignature.length() - 1);
-            }
-            return methodSignature;
-        } else {
-            return "";
-        }
     }
 }
