@@ -338,7 +338,7 @@ public class Main {
         SootWrapper.applyPackages();
 
         conflicts.addAll(overrideAssignment.getConflicts().stream().map(c -> c.toString()).collect(Collectors.toList()));
-        JSONconflicts.addAll(overrideAssignment.getConflicts().stream().map(c -> c.toJSON()).collect(Collectors.toList()));
+        JSONconflicts.addAll(overrideAssignment.getFilteredConflicts().stream().map(c -> c.toJSON()).collect(Collectors.toList()));
         saveExecutionTime("Time to perform OA " + (interprocedural ? "Inter" : "Intra"));
 
         int visitedMethods = overrideAssignment.getVisitedMethodsCount();
